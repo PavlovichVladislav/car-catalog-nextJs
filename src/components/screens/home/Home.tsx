@@ -1,13 +1,16 @@
 import { FC } from "react";
 
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "./Home.module.css";
+import { useRouter } from "next/router";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 const Home: FC = () => {
+   const { asPath, pathname } = useRouter();
+
    return (
       <>
          <Head>
