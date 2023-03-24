@@ -1,0 +1,57 @@
+{
+    "cars": [{
+            "id": 1,
+            "name": "Toyota Camry",
+            "price": 24970,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 2,
+            "name": "Honda Civic",
+            "price": 22545,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 3,
+            "name": "Ford Mustang",
+            "price": 33970,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 4,
+            "name": "Lada granta",
+            "price": 50555,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 5,
+            "name": "Toyota Camry",
+            "price": 22970,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 6,
+            "name": "BMW 3 series",
+            "price": 35545,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 7,
+            "name": "Audi A4",
+            "price": 40415,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 8,
+            "name": "Mercedes",
+            "price": 29970,
+            "image": "http://localhost:4200/images/1.webp"
+        },
+        {
+            "id": 9,
+            "name": "McLaren",
+            "price": 50000,
+            "image": "http://localhost:4200/images/1.webp"
+        }
+    ]
+}
