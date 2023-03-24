@@ -1,22 +1,49 @@
-import { NextPage } from "next";
+import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 
-const CarPage: NextPage = () => {
-   const { asPath, pathname, query, push, replace } = useRouter();
+import { ICarDataSingle } from "@/models/Car";
+import CarDetail from "@/components/screens/car-detail/CarDetail";
+import { CarService } from "@/services/car.service";
+import { ParsedUrlQuery } from "querystring";
+import Layout from "@/components/layout/Layout";
 
-   console.log("asPath", asPath);
-   console.log("pathname", pathname);
-   console.log("query.id", query.id);
-   console.log("push", push);
-   console.log("replace", replace);
+const CarPage: NextPage<ICarDataSingle> = ({ car }) => {
+   const { push, replace } = useRouter();
 
    return (
-      <div>
+      <Layout title={car.name} description="car">
          Car page
          <button onClick={() => push("/")}>go home</button>
          <button onClick={() => replace("/")}>go home(no way to go back)</button>
-      </div>
+         <CarDetail car={car} />
+      </Layout>
    );
+};
+
+interface Params extends ParsedUrlQuery {
+   id: string;
+}
+
+export const getStaticPaths: GetStaticPaths<Params> = async () => {
+   const cars = await CarService.getAll();
+
+   return {
+      paths: cars.map((car) => ({
+         params: {
+            id: car.id.toString(),
+         },
+      })),
+      fallback: "blocking",
+   };
+};
+
+export const getStaticProps: GetStaticProps<ICarDataSingle> = async ({ params }) => {
+   const car = await CarService.getById(params?.id as string);
+
+   return {
+      props: { car },
+      revalidate: 60,
+   };
 };
 
 export default CarPage;
