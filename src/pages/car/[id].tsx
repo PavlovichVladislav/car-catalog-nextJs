@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 
-import { ICarDataSingle } from "@/models/Car";
+import { ICarDataSingle } from "@/models/car";
 import CarDetail from "@/components/screens/car-detail/CarDetail";
 import { CarService } from "@/services/car.service";
 import { ParsedUrlQuery } from "querystring";

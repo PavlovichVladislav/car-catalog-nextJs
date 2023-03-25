@@ -3,7 +3,7 @@ import { FC } from "react";
 import Layout from "@/components/layout/Layout";
 
 import styles from "./Home.module.scss";
-import { ICarData } from "@/models/Car";
+import { ICarData } from "@/models/car";
 import CarItem from "@/components/ui/car/CarItem";
 
 const Home: FC<ICarData> = ({cars}) => {

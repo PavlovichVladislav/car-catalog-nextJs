@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 import styles from './CarItem.module.scss';
-import { ICarDataSingle } from '@/models/Car';
+import { ICarDataSingle } from '@/models/car';
 
 
 
